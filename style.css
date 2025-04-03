@@ -70,3 +70,21 @@ html, body{
 .cashflow{
   width: 90%;
 }
+
+
+.element {
+  background-clip: text; /* Standard */
+  -webkit-background-clip: text; /* For WebKit browsers (Chrome, Safari, Edge) */
+  -moz-background-clip: text; /* For older versions of Firefox */
+}
+
+
+.gradient-text {
+  background: linear-gradient(to right, #cb2e07, #feb47b);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  font-weight: bold;
+  font-style: italic;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* Makes only the text visible */
+}
