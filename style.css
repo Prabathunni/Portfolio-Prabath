@@ -88,3 +88,76 @@ html, body{
   background-clip: text;
   -webkit-text-fill-color: transparent; /* Makes only the text visible */
 }
+
+
+
+
+/* card section */
+
+
+    body {
+      background-color: #0d1117;
+      color: white;
+    }
+    .project-card {
+      background-color: #161b22;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover {
+      box-shadow: 0 0 15px rgba(249, 21, 21, 0.755);
+      transform: translateY(-3px);
+    }
+
+    .badge-top {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: red; /* green */
+      color: rgb(251, 251, 251);
+      padding: 0.5rem 0.75rem;
+      font-weight: bold;
+      border-bottom-left-radius: 1rem;
+    }
+    .tech-stack {
+      color: #de4a4a;
+      font-family: monospace;
+      font-size: 0.9rem;
+    }
+    .project-links a {
+      color: #4ade80;
+      text-decoration: none;
+    }
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* heading */
+    .work-heading {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fff;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .work-heading span {
+      color: #ff0303; /* bright neon green */
+      position: relative;
+    }
+    
+    .work-heading::after {
+      content: "";
+      display: block;
+      width: 60%;
+      height: 3px;
+      background: linear-gradient(90deg, #00FFAB, #00C2FF);
+      margin: 10px auto 0;
+      border-radius: 10px;
+    }
+    

@@ -1,170 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My-Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My-Portfolio</title>
 
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
 
-<!-- FontAwesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 
-<!-- css -->
- <link rel="stylesheet" href="./style.css">
+    <!-- css -->
+    <link rel="stylesheet" href="./style.css">
 
 </head>
+
 <body>
 
-<!-- NAvbar -->
+    <!-- NAvbar -->
 
-<nav class="navbar navbar-expand-md navbar-dark p-2 p-md-4">
+    <nav class="navbar navbar-expand-md navbar-dark p-2 p-md-4">
+        <div class="container">
+            <p class="gradient-text">prabath.io</p>
+
+        </div>
+    </nav>
+
+    <!-- HOME section SELF Intro  -->
+
+    <section class="p-5 vh-100">
+
+        <div class="container d-flex justify-content-center align-items-start ">
+            <div class="mt-5">
+                <p class="hello mb-3">Hello, I'm Prabath</p>
+                <p class="fullstack mb-0">Full-Stack </p>
+                <p class="fullstack mb-0"><span class="webtext">Web</span> Developer</p>
+
+                <p class="para mt-4">I love coding and bringing ideas to life with modern web development. Clean,
+                    efficient, and user-friendly applications are what I aim for!</p>
+                <!-- <button class="btn btn-danger btn-lg rounded-pill shadow mt-3">PORTFOLIO</button> -->
+            </div>
+
+            <!-- profile image section -->
+            <!-- <div class="w-50">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img src="" class="myimage rounded border border-3 border-danger shadow"
+                        alt="myimage">
+                </div>
+            </div> -->
+
+
+
+        </div>
+
+        <!-- Contact icons -->
+
+        <div class="container d-flex justify-content-center gap-3 mt-5">
+            <a href="https://www.linkedin.com/in/prabath77/" target="_blank" class="text-light fs-4">
+                <i class="fab fa-linkedin fa-lg logo"></i>
+            </a>
+            <a href="https://github.com/Prabathunni" target="_blank" class="text-light fs-4">
+                <i class="fab fa-github fa-lg logo"></i>
+            </a>
+            <a href="https://www.instagram.com/sethuramxn/" target="_blank" class="text-light fs-4">
+                <i class="fab fa-instagram fa-lg logo"></i>
+            </a>
+            <a href="mailto:prabathunni826@gmail.com" class="text-light fs-4">
+                <i class="fas fa-envelope fa-lg logo"></i>
+            </a>
+        </div>
+
+
+
+
+
+
+    </section>
+
+
+
+    <!-- works -->
+
+    <h2 class="work-heading my-5 px-5">My <span>works</span></h2>
+
+
     <div class="container">
-        <p class="gradient-text">prabath.io</p>
-    
-        <!-- Toggler Button -->
-        <!-- <button class="navbar-toggler" type="button" onclick="toggleNavbar()">
-            <span class="navbar-toggler-icon"></span>
-        </button> -->
+        <div class="row g-5">
 
-        <!-- Navbar Links -->
-        <!-- <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link navlisttexts px-0 px-md-5" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navlisttexts px-0 px-md-5" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navlisttexts px-0 px-md-5" href="#">Works</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navlisttexts px-0 px-md-5" href="#">Contact</a>
-                </li>
-            </ul>
-        </div> -->
-    </div>
-</nav>
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card position-relative p-4 rounded-4" style="background-color: #161b22;">
 
-<!-- HOME section SELF Intro  -->
+                    <div class="badge-top">
+                        ➔
+                    </div>
 
-<section class="p-5 vh-100">
+                    <h2 class="h5 fw-bold mb-2 d-flex align-items-center text-white">CashFlow</h2>
 
-    <div class="container d-flex justify-content-center align-items-start ">
-        <div class="mt-5">
-            <p class="hello mb-3">Hello, I'm Prabath</p>
-            <p class="fullstack mb-0">Full-Stack  </p>
-            <p class="fullstack mb-0"><span class="webtext">Web</span> Developer</p>
-    
-            <p class="para mt-4">I love coding and bringing ideas to life with modern web development. Clean, efficient, and user-friendly applications are what I aim for!</p>
-            <!-- <button class="btn btn-danger btn-lg rounded-pill shadow mt-3">PORTFOLIO</button> -->
+                    <p class="text-secondary mb-3">
+                        Developed a responsive cash flow system to simplify income and expense tracking
+                        for better financial control.
+                    </p>
+
+                    <div class="project-links mb-3">
+                        <a href="https://cashflow-budget-calculator.vercel.app/" target="_blank"
+                            class="d-block link-danger text-decoration-none">Demo</a>
+                    </div>
+<!-- 
+                    <p class="tech-stack text-success" style="font-family: monospace;">
+                        html bootstrap js
+                    </p> -->
+
+                </div>
+            </div>
+
+            <!-- 22 -->
+
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card position-relative p-4 rounded-4" style="background-color: #161b22;">
+
+                    <div class="badge-top">
+                        ➔
+                    </div>
+
+                    <h2 class="h5 fw-bold mb-2 d-flex align-items-center text-white">porsche-gsap</h2>
+
+                    <p class="text-secondary mb-3">
+                        Crafted a Porsche website with GSAP animations to deliver an interactive and visually engaging experience.
+                    </p>
+
+                    <div class="project-links mb-3">
+                        <a href="https://porsche-reveal-gsap.vercel.app/" target="_blank"
+                            class="d-block link-danger text-decoration-none">Demo</a>
+                    </div>
+
+                    <!-- <p class="tech-stack text-success" style="font-family: monospace;">
+                        html bootstrap js
+                    </p> -->
+
+                </div>
+            </div>
+
+            <!-- 33 -->
+
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card position-relative p-4 rounded-4" style="background-color: #161b22;">
+
+                    <div class="badge-top">
+                        ➔
+                    </div>
+
+                    <h2 class="h5 fw-bold mb-2 d-flex align-items-center text-white">Nike-Clone</h2>
+
+                    <p class="text-secondary mb-3">
+                        Crafted a Nike website clone with a focus on clean design and seamless user experience across all devices.
+                    </p>
+
+                    <div class="project-links mb-3">
+                        <a href="https://nike-umber-ten.vercel.app/" target="_blank"
+                            class="d-block link-danger text-decoration-none">Demo</a>
+                    </div>
+
+                    <!-- <p class="tech-stack text-success" style="font-family: monospace;">
+                        html bootstrap js
+                    </p> -->
+
+                </div>
+            </div>
+
+            <!-- 444 -->
+
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card position-relative p-4 rounded-4" style="background-color: #161b22;">
+
+                    <div class="badge-top">
+                        ➔
+                    </div>
+
+                    <h2 class="h5 fw-bold mb-2 d-flex align-items-center text-white">ecovehicle</h2>
+
+                    <p class="text-secondary mb-3">
+                        Developed a EV awareness website to promote electric vehicle adoption through clean design and engaging content.
+                    </p>
+
+                    <div class="project-links mb-3">
+                        <a href="https://ecovehicle.vercel.app/" target="_blank"
+                            class="d-block link-danger text-decoration-none">Demo</a>
+                    </div>
+
+                    <!-- <p class="tech-stack text-success" style="font-family: monospace;">
+                        html bootstrap js
+                    </p> -->
+
+                </div>
+            </div>
+
+            <!-- 555 -->
+
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card position-relative p-4 rounded-4" style="background-color: #161b22;">
+
+                    <div class="badge-top">
+                        ➔
+                    </div>
+
+                    <h2 class="h5 fw-bold mb-2 d-flex align-items-center text-white">BMI</h2>
+
+                    <p class="text-secondary mb-3">
+                        Built a simple BMI checker tool to help users calculate and understand their body mass index easily and accurately.
+                    </p>
+
+                    <div class="project-links mb-3">
+                        <a href="https://bmi-checker-nu.vercel.app/" target="_blank"
+                            class="d-block link-danger text-decoration-none">Demo</a>
+                    </div>
+
+                    <!-- <p class="tech-stack text-success" style="font-family: monospace;">
+                        html bootstrap js
+                    </p> -->
+
+                </div>
+            </div>
+
+            <!-- 666 -->
+
+            <!-- <div class="col-md-6 col-lg-4">
+                <div class="project-card position-relative p-4 rounded-4" style="background-color: #161b22;">
+
+                    <div class="badge-top">
+                        ➔
+                    </div>
+
+                    <h2 class="h5 fw-bold mb-2 d-flex align-items-center text-white">CashFlow</h2>
+
+                    <p class="text-secondary mb-3">
+                        Developed a responsive cash flow system to simplify income and expense tracking
+                        for better financial control.
+                    </p>
+
+                    <div class="project-links mb-3">
+                        <a href="https://cashflow-budget-calculator.vercel.app/" target="_blank"
+                            class="d-block link-danger text-decoration-none">Demo</a>
+                    </div>
+
+                    <p class="tech-stack text-success" style="font-family: monospace;">
+                        html bootstrap js
+                    </p>
+
+                </div>
+            </div> -->
+
+
         </div>
-    
-    
-        <div class="w-50">
-            <div class="d-flex justify-content-center align-items-center">
-                <img src="./image/smile.webp" class="myimage rounded border border-3 border-danger shadow" alt="myimage">
-            </div>    
-        </div>
-    
-    
-    
-    </div>
-
-    <!-- Contact icons -->
-
-<div class="container d-flex justify-content-center gap-3 mt-5">
-    <a href="https://www.linkedin.com/in/prabath77/" target="_blank" class="text-light fs-4">
-        <i class="fab fa-linkedin fa-lg logo"></i>
-    </a>
-    <a href="https://github.com/Prabathunni" target="_blank" class="text-light fs-4">
-        <i class="fab fa-github fa-lg logo"></i>
-    </a>
-    <a href="https://www.instagram.com/sethuramxn/" target="_blank" class="text-light fs-4">
-        <i class="fab fa-instagram fa-lg logo"></i>
-    </a>
-    <a href="mailto:prabathunni826@gmail.com" class="text-light fs-4">
-        <i class="fas fa-envelope fa-lg logo"></i>
-    </a>
-</div>
-
-
-    
-
-
-
-</section>
-
-
-
-
-<!-- works -->
-
-<section class="container">
-    <div class="row border rounded">
-      <div class="col-12 col-lg-6 p-3 bg-secondary">
-        <div class="d-flex justify-content-center">
-            <img src="./image/cashflow.png" class="cashflow rounded border border-3 border-primary" alt="">
-        </div>
-      </div>
-      <div class="col-12 col-lg-6 text-white d-flex flex-column justify-content-center p-5">
-        <h1 class="mb-3">CashFlow</h1>
-        <h5 class="mb-4">Developed a responsive cash flow system to simplify income and expense tracking for better financial control.</h5>
-         <div>
-            <a href="https://cashflow-budget-calculator.vercel.app/" target="_blank" class="btn btn-danger rounded-pill btn-lg px-4">
-                Explore ↗
-            </a>            
-         </div>
-       </div>
-     </div>      
-</section>
-
-<section class="container mt-5">
-    <div class="row border rounded">
-      <div class="col-12 col-lg-6 p-3">
-        <div class="d-flex justify-content-center">
-            <img src="./image/cashflow.png" class="cashflow rounded border border-3 border-primary" alt="">
-        </div>
-      </div>
-      <div class="col-12 col-lg-6 text-white d-flex flex-column justify-content-center p-5">
-        <h1 class="mb-3">CashFlow</h1>
-        <h5 class="mb-4">Developed a responsive cash flow system to simplify income and expense tracking for better financial control.</h5>
-         <div>
-            <a href="https://cashflow-budget-calculator.vercel.app/" target="_blank" class="btn btn-danger rounded-pill btn-lg px-4">
-                Explore ↗
-            </a>            
-         </div>
-       </div>
-     </div>      
-</section>
 
 
 
 
 
 
-
-
-
-
-
-<script>
-
-function toggleNavbar() {
-    var navbar = document.getElementById("navbarNav");
-    if (navbar.classList.contains("show")) {
-        navbar.classList.remove("show");
-    } else {
-        navbar.classList.add("show");
-    }
-}
-
-</script>
+<!-- footer -->
+<footer class="text-light text-center py-5 mt-5">
+    <h5 class="mb-3">Thanks for visiting!</h5>
+    <small>&copy; 2025 Prabath | Stay inspired. Stay creative.</small>
+</footer>
+  
 
 
 </body>
