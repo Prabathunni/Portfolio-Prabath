@@ -1,3 +1,3 @@
-#a simple portfolio website
+# a simple portfolio website
 
 *craftedbymyself*
