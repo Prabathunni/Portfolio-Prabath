@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  background-color: #0d1117;
+  color: white;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #cb2e07, #feb47b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-style: italic;
+}
