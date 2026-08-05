@@ -1,7 +1,18 @@
 import type { Metadata } from "next";
+import { Anton, Inter } from "next/font/google";
 import "./globals.css";
-import Scene from "@/components/scene/Scene";
 import Nav from "@/components/Nav";
+
+const displayFont = Anton({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-display",
+});
+
+const bodyFont = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+});
 
 export const metadata: Metadata = {
   title: "Prabath.",
@@ -16,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${displayFont.variable} ${bodyFont.variable}`}>
       <head>
         <link
           rel="stylesheet"
@@ -24,7 +35,6 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Scene />
         <Nav />
         {children}
       </body>

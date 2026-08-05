@@ -1,21 +1,22 @@
 import type { Project } from "@/data/projects";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="relative bg-card rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(249,21,21,0.75)]">
-      <div className="absolute top-0 right-0 bg-red-600 text-white font-bold px-3 py-2 rounded-bl-2xl">
-        ➔
+    <div className="group border border-line transition-colors hover:border-accent">
+      <ImagePlaceholder ratio="16/10" label={project.title} bordered={false} className="border-b border-line" />
+      <div className="p-6">
+        <h3 className="font-display text-xl uppercase tracking-wide text-ink">{project.title}</h3>
+        <p className="mt-3 text-sm leading-relaxed text-muted">{project.description}</p>
+        <a
+          href={project.demoUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-5 inline-block text-xs uppercase tracking-widest text-accent hover:underline"
+        >
+          View Project ↗
+        </a>
       </div>
-      <h3 className="text-lg font-bold mb-2 text-white">{project.title}</h3>
-      <p className="text-gray-400 mb-4">{project.description}</p>
-      <a
-        href={project.demoUrl}
-        target="_blank"
-        rel="noreferrer"
-        className="text-red-500 hover:underline"
-      >
-        Demo
-      </a>
     </div>
   );
 }

@@ -8,19 +8,27 @@ export default function Resume() {
   useSectionReveal(ref);
 
   return (
-    <section id="resume" ref={ref} className="container mx-auto px-5 py-24 text-center">
-      <h2 className="text-3xl font-bold mb-6">
-        My <span className="text-red-600">resume</span>
-      </h2>
-      {/* PLACEHOLDER: swap /resume-placeholder.pdf for your real resume file. */}
-      <a
-        href="/resume-placeholder.pdf"
-        target="_blank"
-        rel="noreferrer"
-        className="inline-block bg-gradient-to-r from-accentFrom to-accentTo text-white font-bold py-3 px-8 rounded-full shadow hover:opacity-90 transition-opacity"
-      >
-        Download Resume
-      </a>
+    <section id="resume" ref={ref} className="border-b border-line px-5 py-24 text-center md:px-6">
+      <div className="container mx-auto">
+        <p className="mb-6 flex items-center justify-center gap-2 text-xs uppercase tracking-[0.3em] text-muted">
+          <span className="text-accent">✦</span> Resume
+        </p>
+        <h2 className="font-display text-4xl uppercase leading-tight md:text-5xl">
+          Want the full <span className="text-accent">story</span>?
+        </h2>
+        <p className="mx-auto mt-4 max-w-md text-base text-muted">
+          Grab a copy of my resume for the full rundown on experience, tools, and projects.
+        </p>
+        {/* PLACEHOLDER: swap /resume-placeholder.pdf for your real resume file. */}
+        <a
+          href="/resume-placeholder.pdf"
+          target="_blank"
+          rel="noreferrer"
+          className="mt-8 inline-block border border-accent bg-accent px-8 py-3 text-xs font-bold uppercase tracking-widest text-bg transition-colors hover:bg-transparent hover:text-accent"
+        >
+          Download Resume
+        </a>
+      </div>
     </section>
   );
 }

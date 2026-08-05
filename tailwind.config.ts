@@ -5,13 +5,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#0d1117",
-        card: "#161b22",
-        accentFrom: "#cb2e07",
-        accentTo: "#feb47b",
+        bg: "#0d0d0d",
+        surface: "#161616",
+        line: "rgba(255,255,255,0.12)",
+        ink: "#e8e8e8",
+        muted: "#8a8a8a",
+        accent: "#cb2e07",
       },
-      backgroundImage: {
-        "accent-gradient": "linear-gradient(to right, #cb2e07, #feb47b)",
+      fontFamily: {
+        display: ["var(--font-display)"],
+        sans: ["var(--font-body)"],
       },
     },
   },

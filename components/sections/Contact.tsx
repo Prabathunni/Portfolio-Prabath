@@ -15,22 +15,42 @@ export default function Contact() {
   useSectionReveal(ref);
 
   return (
-    <footer id="contact" ref={ref} className="text-center py-16">
-      <div className="flex justify-center gap-4 mb-6">
-        {SOCIALS.map((s) => (
-          <a
-            key={s.href}
-            href={s.href}
-            target="_blank"
-            rel="noreferrer"
-            className="text-white text-2xl hover:text-orange-400 transition-colors"
-          >
-            <i className={s.icon} />
-          </a>
-        ))}
+    <footer id="contact" ref={ref} className="px-5 py-24 md:px-6">
+      <div className="container mx-auto text-center">
+        <p className="mb-6 flex items-center justify-center gap-2 text-xs uppercase tracking-[0.3em] text-muted">
+          <span className="text-accent">✦</span> Contact
+        </p>
+        <h2 className="font-display text-4xl uppercase leading-tight md:text-6xl">
+          Let&apos;s build something <span className="text-accent">great</span>
+        </h2>
+        <a
+          href="mailto:prabathunni826@gmail.com"
+          className="mt-6 inline-block text-lg text-muted transition-colors hover:text-accent md:text-2xl"
+        >
+          prabathunni826@gmail.com
+        </a>
+
+        <div className="mt-10 flex justify-center gap-4">
+          {SOCIALS.map((s) => (
+            <a
+              key={s.href}
+              href={s.href}
+              target="_blank"
+              rel="noreferrer"
+              className="flex h-10 w-10 items-center justify-center border border-line text-ink transition-colors hover:border-accent hover:text-accent"
+            >
+              <i className={s.icon} />
+            </a>
+          ))}
+        </div>
+
+        <div className="mt-16 flex items-center justify-center gap-4 border-t border-line pt-8">
+          <span className="cross-mark text-accent" />
+          <small className="text-xs uppercase tracking-widest text-muted">
+            &copy; 2026 Prabath — Stay inspired. Stay creative.
+          </small>
+        </div>
       </div>
-      <h5 className="mb-3 font-semibold">Thanks for visiting!</h5>
-      <small className="text-gray-400">&copy; 2025 Prabath | Stay inspired. Stay creative.</small>
     </footer>
   );
 }
