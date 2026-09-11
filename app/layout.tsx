@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Anton, Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
+import IntroOverlay from "@/components/IntroOverlay";
 
 const displayFont = Anton({
   weight: "400",
@@ -34,9 +35,11 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         />
       </head>
-      <body>
-        <Nav />
-        {children}
+      <body suppressHydrationWarning>
+        <IntroOverlay>
+          <Nav />
+          {children}
+        </IntroOverlay>
       </body>
     </html>
   );
