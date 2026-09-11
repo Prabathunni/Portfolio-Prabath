@@ -10,7 +10,11 @@ export default function Works() {
   useSectionReveal(ref, ":scope .project-grid-item");
 
   return (
-    <section id="works" ref={ref} className="border-b border-line px-5 py-24 md:px-6">
+    <section
+      id="works"
+      ref={ref}
+      className="border-b border-line px-5 py-24 md:px-6 lg:px-10 xl:px-20"
+    >
       <div className="container mx-auto">
         <p className="mb-6 flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted">
           <span className="text-accent">✦</span> Selected Work

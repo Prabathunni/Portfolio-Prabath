@@ -8,7 +8,11 @@ export default function Resume() {
   useSectionReveal(ref);
 
   return (
-    <section id="resume" ref={ref} className="border-b border-line px-5 py-24 text-center md:px-6">
+    <section
+      id="resume"
+      ref={ref}
+      className="border-b border-line px-5 py-24 text-center md:px-6 lg:px-10 xl:px-20"
+    >
       <div className="container mx-auto">
         <p className="mb-6 flex items-center justify-center gap-2 text-xs uppercase tracking-[0.3em] text-muted">
           <span className="text-accent">✦</span> Resume

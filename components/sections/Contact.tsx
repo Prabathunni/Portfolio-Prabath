@@ -15,8 +15,13 @@ export default function Contact() {
   useSectionReveal(ref);
 
   return (
-    <footer id="contact" ref={ref} className="px-5 py-24 md:px-6">
-      <div className="container mx-auto text-center">
+    <footer
+      id="contact"
+      ref={ref}
+      className="relative overflow-hidden bg-[url('/image/contact-bg.jpeg')] bg-cover bg-center bg-no-repeat px-5 py-24 md:px-6 lg:px-10 xl:px-20"
+    >
+      <div className="absolute inset-0 bg-bg/90" />
+      <div className="container relative z-10 mx-auto text-center">
         <p className="mb-6 flex items-center justify-center gap-2 text-xs uppercase tracking-[0.3em] text-muted">
           <span className="text-accent">✦</span> Contact
         </p>

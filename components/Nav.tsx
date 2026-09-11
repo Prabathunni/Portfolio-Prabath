@@ -14,7 +14,7 @@ export default function Nav() {
 
   return (
     <nav className="sticky top-0 z-20 border-b border-line bg-bg/95 backdrop-blur">
-      <div className="container mx-auto flex items-center justify-between px-5 py-4 md:px-6">
+      <div className="container mx-auto flex items-center justify-between px-5 py-4 md:px-6 lg:px-10 xl:px-20">
         <a href="#hero" className="font-display text-2xl tracking-wide">
           P<span className="text-accent">.</span>
         </a>

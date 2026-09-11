@@ -15,9 +15,15 @@ export default function About() {
   useSectionReveal(ref);
 
   return (
-    <section id="about" ref={ref} className="border-b border-line px-5 py-24 md:px-6">
-      <div className="container mx-auto grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
-        <ImagePlaceholder ratio="4/5" label="Portrait" />
+    <section
+      id="about"
+      ref={ref}
+      className="border-b border-line px-5 py-24 md:px-6 lg:px-10 xl:px-20"
+    >
+      <div className="container mx-auto grid grid-cols-1 gap-12 lg:grid-cols-[420px_1fr] lg:gap-16">
+        <div className="mx-auto w-full max-w-[420px] lg:mx-0">
+          <ImagePlaceholder ratio="4/5" src="/image/About.png" alt="Prabath Unni" />
+        </div>
 
         <div>
           <p className="mb-6 flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted">
