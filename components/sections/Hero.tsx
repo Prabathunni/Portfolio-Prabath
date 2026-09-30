@@ -2,13 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";
-
-const SOCIALS = [
-  { href: "https://www.linkedin.com/in/prabath77/", icon: "fa-brands fa-linkedin" },
-  { href: "https://github.com/Prabathunni", icon: "fa-brands fa-github" },
-  { href: "https://www.instagram.com/sethuramxn/", icon: "fa-brands fa-instagram" },
-  { href: "mailto:prabathunni826@gmail.com", icon: "fa-solid fa-envelope" },
-];
+import { INTRO_DURATION_MS } from "@/components/IntroOverlay";
 
 export default function Hero() {
   const rootRef = useRef<HTMLElement>(null);
@@ -16,11 +10,13 @@ export default function Hero() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap
-        .timeline({ defaults: { ease: "power3.out" } })
-        .from(".hero-eyebrow", { opacity: 0, y: 12, duration: 0.5 })
-        .from(".hero-name", { opacity: 0, y: 16, duration: 0.5 }, "-=0.2")
-        .from(".hero-title", { opacity: 0, y: 30, duration: 0.7, stagger: 0.12 }, "-=0.2")
-        .from(".hero-para", { opacity: 0, y: 20, duration: 0.6 }, "-=0.3");
+        .timeline({
+          defaults: { ease: "power3.out" },
+          delay: INTRO_DURATION_MS / 1000,
+        })
+        .from(".hero-name", { scale: 1.15, opacity: 0, duration: 0.9 })
+        .from(".hero-tag", { opacity: 0, y: 10, duration: 0.5 }, "-=0.4")
+        .from(".hero-para", { scale: 0.85, opacity: 0, duration: 0.8 }, "-=0.3");
     }, rootRef);
 
     return () => ctx.revert();
@@ -30,45 +26,24 @@ export default function Hero() {
     <section
       id="hero"
       ref={rootRef}
-      className="border-b border-line px-5 pb-16 pt-10 md:px-6 lg:px-10 xl:px-20"
+      className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-5 py-20 text-center md:px-6 lg:px-10 xl:px-20"
     >
-      <div className="container mx-auto">
-        <p className="hero-eyebrow mb-6 flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted">
-          <span className="text-accent">✦</span> Personal Portfolio
+      <div className="grain-overlay pointer-events-none absolute inset-0" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[640px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/20 blur-[130px]" />
+
+      <div className="container relative mx-auto flex flex-col items-center">
+        <h1 className="hero-name font-display text-[clamp(2.75rem,11vw,8rem)] uppercase leading-[0.9] text-ink">
+          Prabath P U
+        </h1>
+
+        <p className="hero-tag mt-6 text-sm uppercase tracking-[0.2em] text-ink md:text-base">
+          Full-Stack Engineer (1+ YOE)
         </p>
 
-        <p className="hero-name mb-3 text-lg text-muted">Hello, I&apos;m</p>
-        <h1 className="hero-title font-display text-6xl uppercase leading-[0.95] md:text-7xl">
-          Prabath
-        </h1>
-        <h1 className="hero-title font-display text-6xl uppercase leading-[0.95] text-accent md:text-7xl">
-          Unni
-        </h1>
-        <p className="hero-title mt-4 font-display text-2xl uppercase tracking-wide text-muted md:text-3xl">
-          Full-Stack Web Developer
+        <p className="hero-para mt-10 max-w-xl text-base leading-relaxed text-muted md:text-lg">
+          Combining solid full-stack fundamentals with AI tools to build high-performance
+          software.
         </p>
-
-        <div className="hero-para mt-12 flex items-start gap-4 border-t border-line pt-6">
-          <span className="cross-mark mt-1 text-accent" />
-          <p className="max-w-md text-sm leading-relaxed text-muted md:text-base">
-            I love coding and bringing ideas to life with modern web development. Clean,
-            efficient, and user-friendly applications are what I aim for.
-          </p>
-        </div>
-
-        <div className="hero-para mt-10 flex gap-4">
-          {SOCIALS.map((s) => (
-            <a
-              key={s.href}
-              href={s.href}
-              target="_blank"
-              rel="noreferrer"
-              className="flex h-10 w-10 items-center justify-center border border-line text-ink transition-colors hover:border-accent hover:text-accent"
-            >
-              <i className={s.icon} />
-            </a>
-          ))}
-        </div>
       </div>
     </section>
   );

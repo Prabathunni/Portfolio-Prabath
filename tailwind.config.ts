@@ -13,8 +13,8 @@ const config: Config = {
         accent: "#cb2e07",
       },
       fontFamily: {
-        display: ["var(--font-display)"],
-        sans: ["var(--font-body)"],
+        display: ["var(--font-cairo)"],
+        sans: ["var(--font-cairo)"],
       },
     },
   },

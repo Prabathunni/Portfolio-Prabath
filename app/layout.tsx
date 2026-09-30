@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
-import { Anton, Inter } from "next/font/google";
+import { Cairo } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import IntroOverlay from "@/components/IntroOverlay";
 
-const displayFont = Anton({
-  weight: "400",
+const cairo = Cairo({
   subsets: ["latin"],
-  variable: "--font-display",
-});
-
-const bodyFont = Inter({
-  subsets: ["latin"],
-  variable: "--font-body",
+  display: "swap",
+  variable: "--font-cairo",
 });
 
 export const metadata: Metadata = {
@@ -28,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${displayFont.variable} ${bodyFont.variable}`}>
+    <html lang="en" className={cairo.variable}>
       <head>
         <link
           rel="stylesheet"

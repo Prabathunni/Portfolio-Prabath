@@ -24,7 +24,7 @@ export default function ImagePlaceholder({
 }: ImagePlaceholderProps) {
   return (
     <div
-      className={`relative overflow-hidden bg-surface ${bordered ? "border border-line" : ""} ${className}`}
+      className={`relative overflow-hidden bg-bg ${bordered ? "border border-line" : ""} ${className}`}
       style={{ aspectRatio: ratio }}
     >
       {src ? (

@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 
-const REVEAL_DELAY = 2400;
-const FADE_DURATION = 700;
+const REVEAL_DELAY = 700;
+const FADE_DURATION = 300;
+export const INTRO_DURATION_MS = REVEAL_DELAY + FADE_DURATION;
 
 export default function IntroOverlay({ children }: { children: React.ReactNode }) {
   const [showIntro, setShowIntro] = useState(true);
