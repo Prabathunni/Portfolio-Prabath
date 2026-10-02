@@ -1,8 +1,8 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { useSectionReveal } from "@/lib/useSectionReveal";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
 
 const STATS = [
   { n: "01", label: "Projects shipped", value: "8+" },
@@ -12,32 +12,23 @@ const STATS = [
 
 export default function About() {
   const ref = useRef<HTMLElement>(null);
-  useSectionReveal(ref);
+  useSectionReveal(ref, ":scope .about-item");
 
   return (
     <section
       id="about"
       ref={ref}
-      className="border-b border-line px-5 py-24 md:px-6 lg:px-10 xl:px-20"
+      className="relative overflow-hidden border-b border-line px-5 pt-24 md:px-6 lg:px-10 xl:px-20"
     >
-      <div className="container mx-auto grid grid-cols-1 gap-12 lg:grid-cols-[420px_1fr] lg:gap-16">
-        <div className="mx-auto w-full max-w-[420px] lg:mx-0">
-          <ImagePlaceholder
-            ratio="4/5"
-            src="/image/about-nobg.png"
-            alt="Prabath Unni"
-            bordered={false}
-          />
-        </div>
-
-        <div>
+      <div className="container mx-auto grid grid-cols-1 items-end gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,460px)] lg:gap-16">
+        <div className="about-item lg:self-center lg:pb-24">
           <p className="mb-6 flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted">
             <span className="text-accent">✦</span> About Me
           </p>
-          <h2 className="font-display text-4xl uppercase leading-tight md:text-5xl">
+          <h2 className="text-balance font-display text-4xl uppercase leading-tight md:text-5xl lg:text-6xl">
             Building things for the <span className="text-accent">web</span>
           </h2>
-          <div className="mt-6 max-w-xl space-y-4 text-base leading-relaxed text-muted md:text-lg">
+          <div className="mt-8 max-w-xl space-y-4 text-base leading-relaxed text-muted md:text-lg">
             <p>
               What I&apos;m best at isn&apos;t tied to one framework. It&apos;s getting handed
               something unfamiliar and figuring out how to make it work. Most days that means
@@ -57,14 +48,40 @@ export default function About() {
             </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 border-t border-line pt-8 sm:grid-cols-3">
+          <dl className="mt-10 max-w-xl border-t border-line">
             {STATS.map((s) => (
-              <div key={s.n}>
-                <span className="font-display text-sm text-accent">{s.n}</span>
-                <p className="mt-2 font-display text-2xl uppercase">{s.value}</p>
-                <p className="text-xs uppercase tracking-widest text-muted">{s.label}</p>
+              <div
+                key={s.n}
+                className="flex items-baseline justify-between gap-6 border-b border-line py-4"
+              >
+                <dt className="flex items-baseline gap-4 text-xs uppercase tracking-widest text-muted">
+                  <span className="font-display text-sm text-accent">{s.n}</span>
+                  {s.label}
+                </dt>
+                <dd className="font-display text-xl uppercase text-ink md:text-2xl">{s.value}</dd>
               </div>
             ))}
+          </dl>
+        </div>
+
+        <div className="about-item relative mx-auto w-full max-w-[420px] lg:max-w-none">
+          <span
+            aria-hidden
+            className="pointer-events-none absolute -top-[4%] left-1/2 -translate-x-1/2 lg:-top-[11%] select-none whitespace-nowrap font-display text-[clamp(4rem,20vw,8rem)] uppercase leading-none text-transparent"
+            style={{ WebkitTextStroke: "1px rgba(255,255,255,0.14)" }}
+          >
+            About
+          </span>
+          <div className="pointer-events-none absolute left-1/2 top-[40%] h-2/3 w-3/4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/20 blur-[110px]" />
+          {/* nudged down so the image's empty bottom strip is clipped and the shirt sits on the border */}
+          <div className="relative aspect-[4/5] translate-y-[2%]">
+            <Image
+              src="/image/about-nobg.png"
+              alt="Prabath Unni"
+              fill
+              sizes="(min-width: 1024px) 460px, 420px"
+              className="object-contain object-bottom"
+            />
           </div>
         </div>
       </div>
