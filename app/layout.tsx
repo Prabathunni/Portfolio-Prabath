@@ -11,7 +11,7 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  title: "Prabath.",
+  title: "prabhuu",
   icons: {
     icon: "/image/letter-p.png",
   },

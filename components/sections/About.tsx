@@ -19,7 +19,7 @@ export default function About() {
     <section
       id="about"
       ref={ref}
-      className="border-b border-line px-5 py-24 md:px-6 lg:px-10 xl:px-20"
+      className="px-5 py-24 md:px-6 lg:px-10 xl:px-20"
     >
       <div className="container mx-auto">
         <div className="about-item flex flex-wrap items-baseline gap-x-6 gap-y-2 md:justify-between border-line pt-3 text-xs uppercase tracking-widest">

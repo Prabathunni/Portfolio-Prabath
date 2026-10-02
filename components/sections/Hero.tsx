@@ -5,23 +5,68 @@ import Image from "next/image";
 import { gsap } from "@/lib/gsap";
 import { INTRO_DURATION_MS } from "@/components/IntroOverlay";
 
+const NAME_STRETCH = 2.5;
+const NAME_STRETCH_DURATION = 4;
+const NAME_STRETCH_BEAT = 0.3;
+
+const windowLoaded = () =>
+  document.readyState === "complete"
+    ? Promise.resolve()
+    : new Promise<void>((resolve) => window.addEventListener("load", () => resolve(), { once: true }));
+
 export default function Hero() {
   const rootRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    let cancelled = false;
+
     const ctx = gsap.context(() => {
+      let introDone: () => void = () => {};
+      const introComplete = new Promise<void>((resolve) => {
+        introDone = resolve;
+      });
+
       gsap
         .timeline({
           defaults: { ease: "power3.out" },
           delay: INTRO_DURATION_MS / 1000,
+          onComplete: introDone,
         })
         .from(".hero-name", { scale: 1.15, opacity: 0, duration: 0.9 })
         .from(".hero-tag", { opacity: 0, y: 10, duration: 0.5 }, "-=0.4")
         .from(".hero-para", { scale: 0.85, opacity: 0, duration: 0.8 }, "-=0.3")
         .from(".hero-photo", { y: 120, opacity: 0, duration: 1, ease: "power3.out" }, "-=0.6");
+
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+      // the name stretches only once the entrance has played and the page, font and photo are all ready
+      const photo = rootRef.current?.querySelector<HTMLImageElement>(".hero-photo img");
+      const assetsReady = Promise.all([
+        document.fonts.ready,
+        windowLoaded(),
+        photo?.decode().catch(() => {}),
+      ]);
+
+      Promise.all([introComplete, assetsReady]).then(() => {
+        if (cancelled) return;
+        // ctx.add keeps the late tween inside the context so cleanup reverts it
+        ctx.add(() => {
+          // the top edge stays put; only the bottom grows, behind the photo
+          gsap.set(".hero-name", { transformOrigin: "50% 0%" });
+          gsap.to(".hero-name", {
+            scaleY: NAME_STRETCH,
+            duration: NAME_STRETCH_DURATION,
+            ease: "power3.inOut",
+            delay: NAME_STRETCH_BEAT,
+          });
+        });
+      });
     }, rootRef);
 
-    return () => ctx.revert();
+    return () => {
+      cancelled = true;
+      ctx.revert();
+    };
   }, []);
 
   return (
