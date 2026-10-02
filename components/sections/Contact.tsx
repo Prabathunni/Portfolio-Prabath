@@ -18,9 +18,8 @@ export default function Contact() {
     <footer
       id="contact"
       ref={ref}
-      className="relative overflow-hidden bg-[url('/image/contact-bg.jpeg')] bg-cover bg-center bg-no-repeat px-5 py-24 md:px-6 lg:px-10 xl:px-20"
+      className="relative overflow-hidden px-5 py-24 md:px-6 lg:px-10 xl:px-20"
     >
-      <div className="absolute inset-0 bg-bg/90" />
       <div className="container relative z-10 mx-auto text-center">
         <p className="mb-6 flex items-center justify-center gap-2 text-xs uppercase tracking-[0.3em] text-muted">
           <span className="text-accent">✦</span> Contact
@@ -30,7 +29,7 @@ export default function Contact() {
         </h2>
         <a
           href="mailto:prabathunni826@gmail.com"
-          className="mt-6 inline-block text-lg text-muted transition-colors hover:text-accent md:text-2xl"
+          className="mt-6 inline-block text-lg underline-offset-4 hover:underline md:text-2xl"
         >
           prabathunni826@gmail.com
         </a>
@@ -42,7 +41,7 @@ export default function Contact() {
               href={s.href}
               target="_blank"
               rel="noreferrer"
-              className="flex h-10 w-10 items-center justify-center border border-line text-ink transition-colors hover:border-accent hover:text-accent"
+              className="flex h-10 w-10 items-center justify-center border border-line text-ink transition-colors hover:bg-ink hover:text-bg"
             >
               <i className={s.icon} />
             </a>

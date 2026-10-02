@@ -32,13 +32,13 @@ export default function ImagePlaceholder({
       ) : (
         <>
           <div
-            className="absolute inset-0 opacity-40"
+            className="absolute inset-0"
             style={{
               backgroundImage:
-                "repeating-linear-gradient(135deg, transparent, transparent 10px, rgba(255,255,255,0.06) 10px, rgba(255,255,255,0.06) 11px)",
+                "repeating-linear-gradient(135deg, transparent, transparent 13px, #000000 13px, #000000 14px)",
             }}
           />
-          <span className="absolute bottom-3 left-3 text-[11px] uppercase tracking-widest text-muted">
+          <span className="absolute bottom-3 left-3 bg-bg px-2 py-1 text-[11px] uppercase tracking-widest text-muted">
             {label}
           </span>
         </>

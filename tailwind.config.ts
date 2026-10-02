@@ -5,12 +5,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#000000",
-        surface: "#0a0a0a",
-        line: "rgba(255,255,255,0.12)",
-        ink: "#e8e8e8",
-        muted: "#8a8a8a",
-        accent: "#cb2e07",
+        bg: "#ffffff",
+        surface: "#ffffff",
+        line: "#000000",
+        ink: "#000000",
+        muted: "#000000",
+        accent: "#000000",
       },
       fontFamily: {
         display: ["var(--font-cairo)"],

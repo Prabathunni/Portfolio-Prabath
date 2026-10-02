@@ -3,7 +3,7 @@ import ImagePlaceholder from "@/components/ImagePlaceholder";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="group border border-line transition-colors hover:border-accent">
+    <div className="group border border-line transition-shadow hover:shadow-[6px_6px_0_0_#000000]">
       <ImagePlaceholder ratio="16/10" label={project.title} bordered={false} className="border-b border-line" />
       <div className="p-6">
         <h3 className="font-display text-xl uppercase tracking-wide text-ink">{project.title}</h3>
