@@ -16,7 +16,7 @@ export default function About() {
       className="border-b border-line px-5 py-24 md:px-6 lg:px-10 xl:px-20"
     >
       <div className="container mx-auto">
-        <div className="about-item flex flex-wrap items-baseline gap-x-6 gap-y-2 border-t-2 md:justify-between border-line pt-3 text-xs uppercase tracking-widest">
+        <div className="about-item flex flex-wrap items-baseline gap-x-6 gap-y-2 md:justify-between border-line pt-3 text-xs uppercase tracking-widest">
           <span>(About)</span>
           {BYLINE.map((item) => (
             <span key={item}>{item}</span>
