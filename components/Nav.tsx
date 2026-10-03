@@ -4,6 +4,7 @@ const LABELS: Record<(typeof SECTION_IDS)[number], string> = {
   hero: "Home",
   about: "About",
   skills: "Skills",
+  experience: "Experience",
   works: "Work",
   resume: "Resume",
   contact: "Contact",
