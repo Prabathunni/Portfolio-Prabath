@@ -73,7 +73,7 @@ export default function Hero() {
     <section
       id="hero"
       ref={rootRef}
-      className="relative flex min-h-[calc(100svh-65px)] flex-col items-center overflow-hidden px-5 text-center md:px-6 lg:px-10 xl:px-20"
+      className="relative flex min-h-svh flex-col items-center overflow-hidden px-5 text-center md:px-6 lg:px-10 xl:px-20"
     >
       <div className="container relative mx-auto flex flex-col items-center pt-16 md:pt-14">
         <p className="hero-tag flex flex-wrap items-center justify-center text-[15px] uppercase tracking-[0.2em] text-ink md:text-xl">

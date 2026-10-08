@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
 import "./globals.css";
-import Nav from "@/components/Nav";
 import IntroOverlay from "@/components/IntroOverlay";
+import ContactDial from "@/components/ContactDial";
 
 const cairo = Cairo({
   subsets: ["latin"],
@@ -32,8 +32,8 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning>
         <IntroOverlay>
-          <Nav />
           {children}
+          <ContactDial />
         </IntroOverlay>
       </body>
     </html>

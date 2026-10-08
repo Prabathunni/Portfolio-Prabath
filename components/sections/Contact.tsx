@@ -2,12 +2,13 @@
 
 import { useRef } from "react";
 import { useSectionReveal } from "@/lib/useSectionReveal";
+import { contact } from "@/data/contact";
 
 const SOCIALS = [
   { href: "https://www.linkedin.com/in/prabath77/", icon: "fa-brands fa-linkedin" },
   { href: "https://github.com/Prabathunni", icon: "fa-brands fa-github" },
   { href: "https://www.instagram.com/sethuramxn/", icon: "fa-brands fa-instagram" },
-  { href: "mailto:prabathunni826@gmail.com", icon: "fa-solid fa-envelope" },
+  { href: `mailto:${contact.email}`, icon: "fa-solid fa-envelope" },
 ];
 
 export default function Contact() {
@@ -28,10 +29,10 @@ export default function Contact() {
           Let&apos;s build something <span className="text-accent">great</span>
         </h2>
         <a
-          href="mailto:prabathunni826@gmail.com"
+          href={`mailto:${contact.email}`}
           className="mt-6 inline-block text-lg underline-offset-4 hover:underline md:text-2xl"
         >
-          prabathunni826@gmail.com
+          {contact.email}
         </a>
 
         <div className="mt-10 flex justify-center gap-4">
@@ -48,10 +49,9 @@ export default function Contact() {
           ))}
         </div>
 
-        <div className="mt-16 flex items-center justify-center gap-4 border-t border-line pt-8">
-          <span className="cross-mark text-accent" />
+        <div className="mt-16 flex items-center justify-center gap-4 pt-8">
           <small className="text-xs uppercase tracking-widest text-muted">
-            &copy; 2026 Prabath — Stay inspired. Stay creative.
+            &copy; 2026 prabu Stay inspired. Stay creative.
           </small>
         </div>
       </div>

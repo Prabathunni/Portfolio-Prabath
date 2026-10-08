@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { useSectionReveal } from "@/lib/useSectionReveal";
+import { contact } from "@/data/contact";
 
 export default function Resume() {
   const ref = useRef<HTMLElement>(null);
@@ -23,9 +24,8 @@ export default function Resume() {
         <p className="mx-auto mt-4 max-w-md text-base text-muted">
           Grab a copy of my resume for the full rundown on experience, tools, and projects.
         </p>
-        {/* PLACEHOLDER: swap /resume-placeholder.pdf for your real resume file. */}
         <a
-          href="/resume-placeholder.pdf"
+          href={contact.resumeHref}
           target="_blank"
           rel="noreferrer"
           className="mt-8 inline-block border border-accent bg-accent px-8 py-3 text-xs font-bold uppercase tracking-widest text-bg transition-colors hover:bg-transparent hover:text-accent"
