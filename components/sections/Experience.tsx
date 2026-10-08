@@ -212,7 +212,6 @@ export default function Experience() {
   const starts = experience.map((role) => role.start).sort();
   const ends = experience.map((role) => role.end ?? today).sort();
   const total = formatDuration(monthSpan(starts[0], ends[ends.length - 1]), "long");
-  const companies = new Set(experience.map((role) => role.company)).size;
 
   return (
     <section
@@ -243,7 +242,7 @@ export default function Experience() {
         </h2>
 
         <p className="exp-item mt-6 max-w-xl text-base leading-[1.7] md:text-lg">
-          {total} across {COUNT_WORDS[companies] ?? companies} companies, from a MERN internship to my current
+          {total} of experience, from a MERN internship to my current
           role as a Software Development Engineer.
         </p>
 

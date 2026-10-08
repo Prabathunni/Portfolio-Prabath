@@ -1,38 +1,35 @@
 export type Project = {
   title: string;
   description: string;
-  demoUrl: string;
+  url: string;
+  // Small label shown when the project is open in the strip.
+  kind: "Recent work" | "Personal project";
 };
 
+// In display order.
 export const projects: Project[] = [
   {
-    title: "CashFlow",
-    description:
-      "Developed a responsive cash flow system to simplify income and expense tracking for better financial control.",
-    demoUrl: "https://cashflow-budget-calculator.vercel.app/",
+    title: "Venmer Tech",
+    description: "Enterprise technology and consulting company",
+    url: "https://venmertech.com/",
+    kind: "Recent work",
   },
   {
-    title: "porsche-gsap",
-    description:
-      "Crafted a Porsche website with GSAP animations to deliver an interactive and visually engaging experience.",
-    demoUrl: "https://porsche-reveal-gsap.vercel.app/",
+    title: "Elevation Stone",
+    description: "Custom stone fabrication, Dallas–Fort Worth",
+    url: "https://elevationstone.com/",
+    kind: "Recent work",
   },
   {
-    title: "Nike-Clone",
-    description:
-      "Crafted a Nike website clone with a focus on clean design and seamless user experience across all devices.",
-    demoUrl: "https://nike-umber-ten.vercel.app/",
+    title: "Porsche GSAP",
+    description: "Animated Porsche website built with GSAP",
+    url: "https://porsche-reveal-gsap.vercel.app/",
+    kind: "Personal project",
   },
   {
-    title: "ecovehicle",
-    description:
-      "Developed a EV awareness website to promote electric vehicle adoption through clean design and engaging content.",
-    demoUrl: "https://ecovehicle.vercel.app/",
-  },
-  {
-    title: "BMI",
-    description:
-      "Built a simple BMI checker tool to help users calculate and understand their body mass index easily and accurately.",
-    demoUrl: "https://bmi-checker-nu.vercel.app/",
+    title: "Nike Clone",
+    description: "Just Did it.",
+    url: "https://nike-umber-ten.vercel.app/",
+    kind: "Personal project",
   },
 ];
