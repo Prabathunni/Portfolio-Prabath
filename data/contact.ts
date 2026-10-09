@@ -10,7 +10,7 @@ export const contact = {
   // The hero shows the handle; the hero link and the footer tile both open the profile.
   githubHandle,
   github: `https://github.com/${githubHandle}`,
-  // PLACEHOLDER: swap /resume-placeholder.pdf for your real resume file in /public.
+  // Must match the filename in /public exactly: Cloudflare paths are case-sensitive.
   // Opens in a new tab; the browser's PDF viewer has its own download button.
-  resumeHref: "/Prabath-Resume.pdf",
+  resumeHref: "/Prabath-resume.pdf",
 };
