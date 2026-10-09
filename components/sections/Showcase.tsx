@@ -57,7 +57,7 @@ export default function Showcase() {
       id="works"
       ref={ref}
       aria-labelledby="works-heading"
-      className="border-b border-line px-5 py-24 md:px-6 lg:px-10 xl:px-20"
+      className="border-b border-line px-5 pb-24 md:px-6 lg:px-10 xl:px-20"
     >
       <div className="container mx-auto">
         <p className="work-item flex items-center gap-2 text-xs uppercase tracking-[0.3em]">

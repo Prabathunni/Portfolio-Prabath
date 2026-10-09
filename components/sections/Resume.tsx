@@ -22,7 +22,7 @@ export default function Resume() {
           Want the full <span className="text-accent">story</span>?
         </h2>
         <p className="mx-auto mt-4 max-w-md text-base text-muted">
-          Grab a copy of my resume for the full rundown on experience, tools, and projects.
+          Open my resume for the full rundown on experience, tools, and projects.
         </p>
         <a
           href={contact.resumeHref}
@@ -30,7 +30,7 @@ export default function Resume() {
           rel="noreferrer"
           className="mt-8 inline-block border border-accent bg-accent px-8 py-3 text-xs font-bold uppercase tracking-widest text-bg transition-colors hover:bg-transparent hover:text-accent"
         >
-          Download Resume
+          View Resume
         </a>
       </div>
     </section>

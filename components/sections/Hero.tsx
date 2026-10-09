@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "@/lib/gsap";
 import { INTRO_DURATION_MS } from "@/components/IntroOverlay";
+import { contact } from "@/data/contact";
 
 const NAME_STRETCH = 2.5;
 const NAME_STRETCH_DURATION = 4;
@@ -34,6 +35,7 @@ export default function Hero() {
         })
         .from(".hero-name", { scale: 1.15, opacity: 0, duration: 0.9 })
         .from(".hero-tag", { opacity: 0, y: 10, duration: 0.5 }, "-=0.4")
+        .from(".hero-github", { opacity: 0, x: -10, duration: 0.5 }, "<")
         .from(".hero-para", { scale: 0.85, opacity: 0, duration: 0.8 }, "-=0.3")
         .from(".hero-photo", { y: 120, opacity: 0, duration: 1, ease: "power3.out" }, "-=0.6");
 
@@ -75,6 +77,39 @@ export default function Hero() {
       ref={rootRef}
       className="relative flex min-h-svh flex-col items-center overflow-hidden px-5 text-center md:px-6 lg:px-10 xl:px-20"
     >
+      {/* a row with no height, on the same column as the content below, so the link stays in the corner whatever the spacer under it does */}
+      <div className="container relative mx-auto h-0">
+        {/* top-left, on the content column's edge; absolute inside the hero, so it scrolls away with it */}
+        <a
+          href={contact.github}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`${contact.githubHandle} on GitHub`}
+          className="hero-github group absolute left-0 top-3 z-10 inline-flex items-center gap-2 py-2.5 text-xs uppercase tracking-[0.2em] text-ink"
+        >
+          <i aria-hidden className="fa-brands fa-github text-lg leading-none" />
+          {contact.githubHandle}
+          <svg
+            aria-hidden
+            viewBox="0 0 10 10"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.2"
+            className="h-2.5 w-2.5 transition-transform duration-200 motion-reduce:transition-none [@media(hover:hover)]:group-hover:-translate-y-0.5 [@media(hover:hover)]:group-hover:translate-x-0.5"
+          >
+            <path d="M1.5 8.5 8.5 1.5M3 1.5h5.5V7" />
+          </svg>
+          {/* the underline draws in from the left on hover or keyboard focus */}
+          <span
+            aria-hidden
+            className="absolute inset-x-0 bottom-2 h-px origin-left scale-x-0 bg-ink transition-transform duration-300 motion-reduce:transition-none group-focus-visible:scale-x-100 [@media(hover:hover)]:group-hover:scale-x-100"
+          />
+        </a>
+      </div>
+
+      {/* the tag and paragraph sit a little below the top edge: this spacer takes up to 3rem, but only from space the screen has spare, and the matching one below keeps the name where it was */}
+      <div aria-hidden className="max-h-12 flex-1" />
+
       <div className="container relative mx-auto flex flex-col items-center pt-16 md:pt-14">
         <p className="hero-tag flex flex-wrap items-center justify-center text-[15px] uppercase tracking-[0.2em] text-ink md:text-xl">
           {/* the trailing letter-spacing is pulled out of the right padding so the label text looks centred */}
@@ -90,7 +125,9 @@ export default function Hero() {
         </p>
       </div>
 
-      <div className="container relative mx-auto mt-auto flex flex-col items-center pt-10">
+      <div aria-hidden className="flex-1" />
+
+      <div className="container relative mx-auto flex flex-col items-center pt-10">
         {/* the photo sits above the name (z-10 vs z-0) and the negative margin pulls it up so the top of the hair covers a little of the lettering */}
         <h1 className="hero-name relative z-0 -mb-[0.4em] font-display text-[clamp(2.25rem,13.5vw,10.5rem)] font-semibold md:text-[clamp(3rem,12.5vw,10.5rem)] uppercase leading-[0.9] tracking-[0.01em] text-ink">
           Prabath P U

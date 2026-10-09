@@ -7,7 +7,8 @@ type Action = {
   label: string;
   icon: string;
   href: string;
-  download?: string;
+  // Opens in a new tab instead of the same one (the resume).
+  newTab?: boolean;
   // Email and phone. Where there is a mouse, the button grows into a pill showing this value and a click copies it.
   value?: string;
   copiedMessage?: string;
@@ -39,10 +40,10 @@ const ACTIONS: Action[] = [
     y: -65,
   },
   {
-    label: "Download resume",
-    icon: "fa-solid fa-download",
+    label: "View resume",
+    icon: "fa-solid fa-file-lines",
     href: contact.resumeHref,
-    download: contact.resumeFileName,
+    newTab: true,
     x: 0,
     y: -RADIUS,
   },
@@ -58,7 +59,7 @@ const CLOSE_BAR =
   "absolute left-1/2 top-1/2 h-0.5 w-5 -translate-x-1/2 -translate-y-1/2 bg-bg transition-opacity duration-200 motion-reduce:transition-none";
 
 // Fixed in the bottom-right corner at every screen size. Touch screens tap through to the mail app, dialler and
-// download; screens with a mouse get the hover pills below, since a desktop rarely has a mail or phone app.
+// resume; screens with a mouse get the hover pills below, since a desktop rarely has a mail or phone app.
 export default function ContactDial() {
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState<string | null>(null);
@@ -124,7 +125,8 @@ export default function ContactDial() {
           <li key={action.label} className="absolute left-1/2 top-1/2 z-20 h-0 w-0">
             <a
               href={action.href}
-              download={action.download}
+              target={action.newTab ? "_blank" : undefined}
+              rel={action.newTab ? "noreferrer" : undefined}
               aria-label={action.value ? `${action.label} ${action.value}` : action.label}
               tabIndex={open ? 0 : -1}
               onClick={(event) => onAction(event, action)}
@@ -175,7 +177,7 @@ export default function ContactDial() {
                   aria-hidden
                   className="pointer-events-none absolute bottom-full right-0 mb-2 whitespace-nowrap bg-ink px-3 py-1 text-[11px] uppercase tracking-[0.14em] text-bg opacity-0 transition-opacity duration-200 motion-reduce:transition-none [@media(hover:hover)]:group-hover:opacity-100 [@media(hover:hover)]:group-focus-visible:opacity-100"
                 >
-                  Download resume
+                  View resume
                 </span>
               )}
             </a>

@@ -6,7 +6,7 @@ import { contact } from "@/data/contact";
 
 const SOCIALS = [
   { href: "https://www.linkedin.com/in/prabath77/", icon: "fa-brands fa-linkedin" },
-  { href: "https://github.com/Prabathunni", icon: "fa-brands fa-github" },
+  { href: contact.github, icon: "fa-brands fa-github" },
   { href: "https://www.instagram.com/sethuramxn/", icon: "fa-brands fa-instagram" },
   { href: `mailto:${contact.email}`, icon: "fa-solid fa-envelope" },
 ];
