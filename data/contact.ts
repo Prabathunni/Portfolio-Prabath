@@ -1,5 +1,5 @@
-// PLACEHOLDER: put your real number here, with the country code, exactly as it should be shown (e.g. "+91 98765 43210").
-const phone = "+91 XXXXX XXXXX";
+// The number as it is shown and copied; the dial link below strips the spaces.
+const phone = "+91 90482 47225";
 const githubHandle = "Prabathunni";
 
 export const contact = {
@@ -12,5 +12,5 @@ export const contact = {
   github: `https://github.com/${githubHandle}`,
   // PLACEHOLDER: swap /resume-placeholder.pdf for your real resume file in /public.
   // Opens in a new tab; the browser's PDF viewer has its own download button.
-  resumeHref: "/resume-placeholder.pdf",
+  resumeHref: "/Prabath-Resume.pdf",
 };

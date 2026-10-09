@@ -12,9 +12,6 @@ const cairo = Cairo({
 
 export const metadata: Metadata = {
   title: "prabhuu",
-  icons: {
-    icon: "/image/letter-p.png",
-  },
 };
 
 export default function RootLayout({
